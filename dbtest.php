@@ -10,7 +10,7 @@ echo "dbport is: ".$dbport."<p>\n";
 echo "dbname is: ".$dbname."<p>\n";
 
 
-$connection = mysql_connect($dbhost.":".$dbport, $dbuser, $dbpwd);
+$connection = mysqli_connect($dbhost.":".$dbport, $dbuser, $dbpwd);
 
 if (!$connection) {
         echo "could not connect to database";
@@ -18,13 +18,16 @@ if (!$connection) {
         echo "connected to database.<p>\n" ;
 }
 
-$dbconnection = mysql_select_db ($dbname);
+$dbconnection = mysqli_select_db ($connection, $dbname);
 
 $query = "SELECT * from users";
 
-$rs = mysql_query($query);
-while ($row = mysql_fetch_assoc($rs)) {
+$rs = mysqli_query($connection, $query);
+while ($row = mysqli_fetch_assoc($rs)) {
         echo $row['user_id']." ".$row['username']."<p>\n";
 }
+mysqli_free_result($rs);
+
+mysqli_close ($connection);
+
 echo "<p>\n";
-mysql_close ();
