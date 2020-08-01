@@ -9,9 +9,7 @@ echo "dbhost is: ".$dbhost."<p>\n";
 echo "dbport is: ".$dbport."<p>\n";
 echo "dbname is: ".$dbname."<p>\n";
 
-phpinfo ();
-
-$connection = mysql_connect($dbhost.":".$dbport, $dbuser, $dbpwd);
+$connection = mysqli_connect($dbhost.":".$dbport, $dbuser, $dbpwd);
 
 if (!$connection) {
         echo "could not connect to database";
@@ -19,18 +17,18 @@ if (!$connection) {
         echo "connected to database.<p>\n" ;
 }
 
-$dbconnection = mysql_select_db ($dbname);
+$dbconnection = mysqli_select_db ($connection, $dbname);
 
 $query = "create table users (user_id int not null auto_increment, username varchar(200), PRIMARY KEY (user_id));";
-$rs = mysql_query($query);
+$rs = mysqli_query($connection, $query);
 
 $query = "insert into users  values (null, 'anand')";
-$rs = mysql_query($query);
+$rs = mysqli_query($connection, $query);
 
 $query = "insert into users values (null. 'ajay')";
-$rs = mysql_query($query);
+$rs = mysqli_query($connection, $query);
 
 echo "<p>\n";
-mysql_close ();
+mysqli_close ($connection);
 
 ?>
