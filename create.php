@@ -35,7 +35,7 @@ $query = "insert into users values (null, 'newuser')";
 $rs = mysqli_query($connection, $query);
 
 
-echo "5 records inserted <p>\n";
+echo "records inserted successfully <p>\n";
 mysqli_close ($connection);
 
 ?>
