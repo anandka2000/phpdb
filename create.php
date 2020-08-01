@@ -25,10 +25,17 @@ $rs = mysqli_query($connection, $query);
 $query = "insert into users  values (null, 'anand')";
 $rs = mysqli_query($connection, $query);
 
-$query = "insert into users values (null. 'ajay')";
+$query = "insert into users values (null, 'ajay')";
 $rs = mysqli_query($connection, $query);
 
-echo "<p>\n";
+$query = "insert into users values (null, 'uml')";
+$rs = mysqli_query($connection, $query);
+
+$query = "insert into users values (null, 'newuser')";
+$rs = mysqli_query($connection, $query);
+
+
+echo "5 records inserted <p>\n";
 mysqli_close ($connection);
 
 ?>
