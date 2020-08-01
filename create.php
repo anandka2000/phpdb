@@ -23,10 +23,10 @@ $dbconnection = mysql_select_db ($dbname);
 $query = "create table users (user_id int not null auto_increment, username varchar(200), PRIMARY KEY (user_id));";
 $rs = mysql_query($query);
 
-$query = "insert into users values (null, 'anand');
+$query = "insert into users  values (null, 'anand')";
 $rs = mysql_query($query);
 
-$query = "insert into users values (null. 'ajay');"
+$query = "insert into users values (null. 'ajay')";
 $rs = mysql_query($query);
 
 echo "<p>\n";
