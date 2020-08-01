@@ -9,6 +9,7 @@ echo "dbhost is: ".$dbhost."<p>\n";
 echo "dbport is: ".$dbport."<p>\n";
 echo "dbname is: ".$dbname."<p>\n";
 
+phpinfo ();
 
 $connection = mysql_connect($dbhost.":".$dbport, $dbuser, $dbpwd);
 
@@ -31,3 +32,5 @@ $rs = mysql_query($query);
 
 echo "<p>\n";
 mysql_close ();
+
+?>
