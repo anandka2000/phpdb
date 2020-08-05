@@ -4,10 +4,12 @@ $dbport = getenv ("MYSQL_SERVICE_PORT");
 $dbuser = 'root';
 $dbpwd  = getenv ("MYSQL_ROOT_PASSWORD");
 $dbname = getenv ("MYSQL_DATABASE");
+$hname  = getenv ("HOSTNAME");
 
 echo "dbhost is: ".$dbhost."<p>\n";
 echo "dbport is: ".$dbport."<p>\n";
 echo "dbname is: ".$dbname."<p>\n";
+echo "hostname is: ".$hname."<p>\n";
 
 
 $connection = mysqli_connect($dbhost.":".$dbport, $dbuser, $dbpwd);
